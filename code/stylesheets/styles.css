@@ -1,0 +1,32 @@
+button{
+  background-color: red;
+  }
+  
+  .card{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center;
+    
+  }
+  
+  
+  
+  .front{
+    width: 150px;
+    height: 150px;
+    background-image: url('images/AceOfSpades.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+   
+  
+ .back{
+    width: 180px;
+    height: 150px;
+    background-image: url("images/backofcard.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
