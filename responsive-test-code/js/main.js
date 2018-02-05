@@ -29,11 +29,18 @@ $('#stand-button').on("click", function(){
 //   }
 // }
 
-//Displays Sum of Cards in Hand
+//Displays Sum of Player Cards and Value of First Dealer Card
 function displaySums(){
-document.getElementById('dealer-cards-score').innerHTML = "Dealer: " + blackjack.dealer[0].value
+document.getElementById('dealer-cards-score').innerHTML = "Dealer: " + blackjack.dealer.cards[0].value
 document.getElementById('player-cards-score').innerHTML = "Player: " + blackjack.player.sum
 }
+
+//Shows Sums of Player and Dealer Cards and Dealer's Hidden Card after Dealer Flips 
+function showHiddenDealerCard(){
+  $('#dealer-card1').attr("style", 'background-image: url(\'images/' + blackjack.dealer.cards[1].img + '.png\')')
+  $('#dealer-cards-score').text("Dealer: " + blackjack.dealer.sum)
+  $('#player-cards-score').text("Player: " + blackjack.player.sum)
+  }
 
 function displayWinner(person, blackjack){
   if(person === 'push'){
@@ -50,10 +57,7 @@ function displayWinner(person, blackjack){
   
 }
 //Flip Hidden Dealer Card
-function showHiddenDealerCard(){
-  $('#dealer-card1').attr("style", 'background-image: url(\'images/' + blackjack.dealer.cards[1].img + '.png\')')
-  $(#'dealer-cards-score').text("Dealer: " + blackjack.dealer.sum)
-  }
+
 
 //Make html for each each to be displayed. Person = Dealer Or Player
 function displayCard(person, index){
@@ -70,7 +74,6 @@ function displayCard(person, index){
   html+= ' style="background-image: url(\'images/' + person.cards[index].img + '.png\')" >'
   html+= '</article>'
 }
-
   //Append Tag to Correct Div
   if(person === blackjack.player){
   $('.container-player .row').append(html)
@@ -86,10 +89,6 @@ function resetCards(){
   $('.container-player .row').html("")
   $('#victory').html("")
 }
-
-
-
-
 
 function flipCard(){
   $('#card1').on('click', function() {
