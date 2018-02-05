@@ -1,0 +1,59 @@
+
+body, html {
+  height: 100%;
+}
+
+.bg{
+  background-image: url("images/casino-background.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+button{
+  background-color: red;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 100%;
+  width: 100px;
+  }
+
+  /* FA stylings for buttons */
+  .btn-circle{
+    border-radius: 50%
+  }
+
+  .btn-danger.btn-circle{
+    -webkit-box-shadow: 0px 0px 3px 1px #b92c28;
+    -moz-box-shadow:    0px 0px 3px 1px #b92c28;
+    box-shadow:         0px 0px 3px 1px #b92c28;
+  }
+
+  /* Styling for Sums Fonts */
+  #buttons #player-cards-score, #buttons #dealer-cards-score, #buttons #victory{
+    font-size: 2em;
+  }
+  .info-box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  /* Class for Card Styling */
+ .card{
+    width: 125px;
+    height: 160px;
+    margin: 5px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  
+  }
+
+/* Player Cards and Dealer Cards Div Resized to fit 30% of screen */
+.mh1 article{
+  height: 30vh;
+}
+
