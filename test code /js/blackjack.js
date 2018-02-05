@@ -51,7 +51,6 @@ var BlackjackGame = function (){
       }
     }
   }
-  
 }
 
 
@@ -92,15 +91,18 @@ BlackjackGame.prototype.dealACard= function(person){
 BlackjackGame.prototype.checkForBlackjack = function(){
   //If Player Has Blackjack, Display Player Wins
   if (this.player.sum === 21 && this.dealer.sum < 21){
-    return this.winner(this.player, "blackjack");
+    showHiddenDealerCard();
+    this.winner(this.player, "blackjack");
   }
     //If Dealer Has Blackjack, Display Dealer Wins
   else if(this.player.sum < 21 && this.dealer.sum === 21){
-  return this.winner(this.dealer, "blackjack")
+      showHiddenDealerCard();
+      this.winner(this.dealer, "blackjack")
   }
    //If Dealer and Player Has Blackjack, Display Push
   else if(this.player.sum ===21 && this.dealer.sum ===21){
-    return this.winner('push')
+    showHiddenDealerCard();
+    this.winner('push')
   }
   else{
     console.log("No Blackjack")
@@ -129,12 +131,16 @@ BlackjackGame.prototype.checkForBust = function(person){
   if(person = this.dealer && this.dealer.sum > 21)
   {
     this.winner(this.player)
+    //Show hidden Dealer Card
+    showHiddenDealerCard();
     return true
   }
   //If Player Busts, Dealer Wins
   else if(person = this.player && this.player.sum > 21){
      //To Signal Display Change, Return True
     this.winner(this.dealer)
+     //Show hidden Dealer Card
+     showHiddenDealerCard();
     return true
   }
 
@@ -143,23 +149,17 @@ BlackjackGame.prototype.checkForBust = function(person){
 //Initiated by Stand Button
 //Check sum of dealer cards against player cards. Initiate proper result.
 BlackjackGame.prototype.compareSums = function(){
-  //If Dealer Hand is Greater than Player Hand, Dealer Wins 
-  
-  if (this.dealer.sum < 22 && this.dealer.sum > this.player.sum){
-      return this.winner(this.dealer)
-    } 
-    //If Dealer Hand is Lesser Than Player Hand and Lesser than or equal to 17, Dealer Hits
-    else if (this.player.sum > this.dealer.sum && this.dealer.sum < 17){
+  //If Dealer Hand is Less Than 17, Hit
+    if (this.dealer.sum < 17){
         this.dealerHit();
     }
-     //If Dealer Hand is Equal to Player Hand and Lesser than 17, Dealer Hits
-    else if(this.player.sum === this.dealer.sum && this.dealer.sum < 17 ){
-        this.dealerHit();
-  }
     //If Dealer Hand is Lesser Than Player Hand and Greater than or equal to 17, Player Wins
     else if(this.player.sum > this.dealer.sum && this.dealer.sum > 16 ){
         return this.winner(this.player);
-    }
+    } //If Dealer Hand is Greater Than Player Hand and Greater than or equal to 17, Dealer Wins
+    else if(this.player.sum < this.dealer.sum && this.dealer.sum > 16 ){
+      return this.winner(this.dealer);
+    } //If Dealer Hand is Equal to Player Hand and Greater than or equal to 17, Push
     else if(this.player.sum === this.dealer.sum && this.dealer.sum > 16 ){
         return this.winner('push');
     }
@@ -187,6 +187,7 @@ BlackjackGame.prototype.reset = function(){
   this.dealer.sum = 0;
   this.player.cards =[];
   this.dealer.cards =[];
+  this.deck=[];
   //From main.js, Reset Cards on Display to Empty to Prepare For Next Deal
   resetCards();
 }
