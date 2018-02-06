@@ -47,7 +47,7 @@ body, html {
   transform: rotate(10deg);
   position: relative;
   right: 3vw;
-  margin-right: 3vw;
+
 }
 
 /* Left Card Fan */
@@ -59,8 +59,7 @@ body, html {
 /* Text Below Image */
 #page1 header p{
   font-size: 2.5em;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 /* Start Button */
@@ -72,11 +71,6 @@ body, html {
   width: 7vw;
 }
 
-
-
-
-
-
 /* Casino.html */
 #page2 button{
   background-color: red;
@@ -86,12 +80,11 @@ body, html {
   width: 100px;
   }
 
- 
-
   /* Styling for Sums Fonts */
   #buttons #player-cards-score, #buttons #dealer-cards-score, #buttons #victory{
     font-size: 2em;
   }
+
   .info-box{
     width: 100px;
     height: 100px;
@@ -107,11 +100,14 @@ body, html {
     margin: 5px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-  
-  }
+}
 
 /* Player Cards and Dealer Cards Div Resized to fit 30% of screen */
-page2 mh1 article{
+#page2 .cdh article {
   height: 30vh;
+}
+
+#page2 .blocked{
+  pointer-events: none;
 }
 

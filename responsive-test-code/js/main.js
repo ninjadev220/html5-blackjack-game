@@ -3,6 +3,10 @@ var blackjack = new BlackjackGame;
 //Run Deal Function, display values of cards, and hide right Dealer-Card when deal button pressed
 $('#deal-button').on("click", function(){
     blackjack.deal();
+
+    //Set buttons to Appropriate Position
+    buttonsAfterDeal();
+
 })
 
 //Initiates Player Hit function when Hit Button Pressed. 
@@ -15,14 +19,6 @@ $('#stand-button').on("click", function(){
   blackjack.compareSums();
   showHiddenDealerCard();
 })
-
-//Displays Dealer Card if Player Busts or Blackjack
-// function displayCardOnBust(){
-//   if(blackjack.checkForBust(blackjack.player) === true){
-//     $('#dealer-card2').toggleClass('back');
-//     $('#dealer-card2').toggleClass('front');
-//   }
-// }
 
 //Displays Sum of Player Cards and Value of First Dealer Card
 function displaySums(){
@@ -37,21 +33,25 @@ function showHiddenDealerCard(){
   $('#player-cards-score').text("Player: " + blackjack.player.sum)
   }
 
-function displayWinner(person, blackjack){
+function displayWinner(person, string){
   if(person === 'push'){
     $("#victory").text('Push!');
   }
-  else if(blackjack === "blackjack"){
+  else if(string === "blackjack"){
     $("#victory").text(person.name + " has Blackjack!")
+  }
+  else if(string==="bust"){
+    $("#victory").text(person.name + " busts!");
   }
   else{
   //Display winner
   $("#victory").text(person.name + " wins!");
 }
-  
-  
+
+//Block Hit and Stand Buttons, Unblock Deal Button
+buttonsStartDeal();
 }
-//Flip Hidden Dealer Card
+
 
 
 //Make html for each each to be displayed. Person = Dealer Or Player
@@ -83,6 +83,20 @@ function resetCards(){
   $('.container-dealer .row').html("");
   $('.container-player .row').html("")
   $('#victory').html("")
+}
+
+//Unblock Deal Button, Block Hit and Stand Buttons
+function buttonsStartDeal(){
+  $('#hit-button').addClass('blocked');
+  $('#stand-button').addClass('blocked');
+  $('#deal-button').removeClass('blocked');
+}
+
+//Block Deal Button, Unblock Hit and Stand buttons
+function buttonsAfterDeal(){
+  $('#hit-button').removeClass('blocked');
+  $('#stand-button').removeClass('blocked');
+  $('#deal-button').addClass('blocked');
 }
 
 function flipCard(){

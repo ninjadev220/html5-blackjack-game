@@ -86,8 +86,10 @@ BlackjackGame.prototype.dealACard= function(person){
   person.cards.push(this.deck[index]);
   
   //Add value of Card to Sum
+  // if(this.deck[index].value !=== 11)
   person.sum += this.deck[index].value;
-  
+  // else{ sumAces();
+
   //Remove Card from the Deck
   this.deck.splice(index, 1);
   
@@ -142,15 +144,15 @@ BlackjackGame.prototype.checkForBust = function(person){
  //If Dealer Busts, Player Wins
   if(person = this.dealer && this.dealer.sum > 21)
   {
-    displayWinner(this.player)
+    displayWinner(this.dealer, "bust")
     //Show hidden Dealer Card
     showHiddenDealerCard();
     return true
   }
-  //If Player Busts, Dealer Wins
+  //If Player Busts, Dealer Wins  - && this.player.sumLowAce > 21
   else if(person = this.player && this.player.sum > 21){
      //To Signal Display Change, Return True
-    displayWinner(this.dealer)
+    displayWinner(this.player, "bust")
      //Show hidden Dealer Card
      showHiddenDealerCard();
     return true
@@ -193,6 +195,7 @@ BlackjackGame.prototype.compareSums = function(){
 // }
 // }
 
+
 //Reset Sums and Cards for New Hand
 BlackjackGame.prototype.reset = function(){
   this.player.sum = 0;
@@ -203,6 +206,7 @@ BlackjackGame.prototype.reset = function(){
   //From main.js, Reset Cards on Display to Empty to Prepare For Next Deal
   resetCards();
 }
+
 
 
 
