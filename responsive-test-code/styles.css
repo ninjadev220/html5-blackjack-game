@@ -47,13 +47,13 @@ body, html {
   transform: rotate(10deg);
   position: relative;
   right: 3vw;
+  margin-right: 3vw;
 }
 
 /* Left Card Fan */
 #page1 .left{
   height: 35vh;
   transform: rotate(-10deg);
-  
 }
 
 /* Text Below Image */
@@ -70,7 +70,6 @@ body, html {
   padding: 15px;
   margin: 5px;
   width: 7vw;
- 
 }
 
 
@@ -79,7 +78,6 @@ body, html {
 
 
 /* Casino.html */
-
 #page2 button{
   background-color: red;
   padding: 15px;
