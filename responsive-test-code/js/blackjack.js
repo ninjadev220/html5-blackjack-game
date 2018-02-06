@@ -60,13 +60,19 @@ var BlackjackGame = function (){
 BlackjackGame.prototype.deal = function(){
   //Initialize Cards and Sums to [] and 0
   this.reset();
-    //Make New Deck
+    
+  //Make New Deck
   this.makeDeck();
+  
   //Deal Two Cards One at a Time
   this.dealACard(this.player);
   this.dealACard(this.dealer);
   this.dealACard(this.player);
   this.dealACard(this.dealer);
+  
+  //Display the Sums of the Player's Hand and the Dealer's Hand
+  displaySums();
+
   //Check Player and Dealer Hands for Blackjack. Respond Accordingly
   this.checkForBlackjack();
   console.log(this.player.sum, this.dealer.sum)
@@ -78,10 +84,13 @@ BlackjackGame.prototype.dealACard= function(person){
   //Randomly choose a card
   var index = Math.floor((Math.random() * this.deck.length));
   person.cards.push(this.deck[index]);
+  
   //Add value of Card to Sum
   person.sum += this.deck[index].value;
-   //Remove Card from the Deck
+  
+  //Remove Card from the Deck
   this.deck.splice(index, 1);
+  
   //Display Card function from main.js.
   displayCard(person, (person.cards.length-1));
 // }
@@ -112,9 +121,12 @@ BlackjackGame.prototype.checkForBlackjack = function(){
 //Connect to Hit button. Adds a card to Player's Hand, Checks For Bust.
 BlackjackGame.prototype.playerHit= function(){
  this.dealACard(this.player);
-  //Check for Bust
+ 
+ //Check for Bust
  this.checkForBust(this.player);
  console.log(this.player.sum)
+ 
+ displaySums();
 }
 
 //Adds a card to Dealer's Hand. Check for Bust.

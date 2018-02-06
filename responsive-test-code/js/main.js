@@ -3,21 +3,16 @@ var blackjack = new BlackjackGame;
 //Run Deal Function, display values of cards, and hide right Dealer-Card when deal button pressed
 $('#start-button').on("click", function(){
     blackjack.deal();
-    displaySums();
 })
 
 //Initiates Player Hit function when Hit Button Pressed. 
 $('#hit-button').on("click", function(){
   blackjack.playerHit();  
-  displaySums();
-  // displayCardOnBust();
 })
 
 //Initiates Compare Sums Function when Stand Button Pressed
 $('#stand-button').on("click", function(){
   blackjack.compareSums();
-  displaySums();
-  //Displays Face Down Dealer Card
   showHiddenDealerCard();
 })
 

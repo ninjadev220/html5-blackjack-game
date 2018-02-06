@@ -2,7 +2,7 @@
 body, html {
   height: 100%;
 }
-
+/* Page Background */
 .bg{
   background-image: url("images/casino-background.jpg");
   height: 100%; 
@@ -10,6 +10,19 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Index.html */
+
+
+
+
+
+
+
+
+
+
+/* Casino.html */
 
 button{
   background-color: red;
