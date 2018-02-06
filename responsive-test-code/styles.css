@@ -33,7 +33,7 @@ body, html {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center; 
-  align-content: center;
+  align-content: strecth;
 }
 /* Page Header */
 #page1 header .title{
@@ -41,10 +41,26 @@ body, html {
     text-align: center;
 }
 
+/* Right Card Fan */
+#page1 .right{
+  height: 35vh;
+  transform: rotate(10deg);
+  position: relative;
+  right: 3vw;
+}
+
+/* Left Card Fan */
+#page1 .left{
+  height: 35vh;
+  transform: rotate(-10deg);
+  
+}
+
 /* Text Below Image */
 #page1 header p{
-  font-size: 2em;
+  font-size: 2.5em;
   text-align: center;
+  
 }
 
 /* Start Button */
