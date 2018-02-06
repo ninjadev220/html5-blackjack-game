@@ -14,7 +14,7 @@
 
   <title>Blackjack Casino</title>
 </head>
-<body id="#page2">
+<body id="page2">
   <div class="bg">
 
   <!-- Dealer Cards -->
@@ -29,15 +29,21 @@
   <section id="buttons">
       <div class="container">
         <div class="row justify-content-end">
+          <!-- Displays Dealer's Hand Value -->
           <div id="dealer-cards-score" align="right" class="col-3"></div>
-          <div class="col-4" align="right"> <button class="btn btn-danger btn-circle btn-lg" id="start-button">Deal</button></div>
+          <!-- Displays Deal Button -->
+          <div class="col-4" align="right"> <button class="btn btn-danger btn-circle btn-lg" id="deal-button">Deal</button></div>
         </div>
         <div class="row justify-content-end">
+          <!-- Displays The Winner -->
           <div id="victory" class="col-5"></div>
+          <!-- Displays Hit Button -->
           <div class="col-4" align="right"> <button class="btn btn-danger btn-circle btn-lg" id="hit-button">Hit</button></div>
         </div>
         <div class="row justify-content-end">
+          <!-- Displays Player's Hand Value -->
           <div id="player-cards-score" align="right" class="col-3"></div>
+          <!-- Displays Stand Button -->
           <div class="col-4" align="right"><button class="btn btn-danger btn-circle btn-lg" id="stand-button">Stand</button></div> 
         </div>
   </div>

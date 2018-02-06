@@ -1,7 +1,7 @@
 var blackjack = new BlackjackGame;
 
 //Run Deal Function, display values of cards, and hide right Dealer-Card when deal button pressed
-$('#start-button').on("click", function(){
+$('#deal-button').on("click", function(){
     blackjack.deal();
 })
 

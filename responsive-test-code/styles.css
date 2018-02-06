@@ -11,11 +11,51 @@ body, html {
   background-size: cover;
 }
 
+ /* FA stylings for buttons */
+ .btn-circle{
+  border-radius: 50%
+}
+
+.btn-danger.btn-circle{
+  -webkit-box-shadow: 0px 0px 3px 1px #b92c28;
+  -moz-box-shadow:    0px 0px 3px 1px #b92c28;
+  box-shadow:         0px 0px 3px 1px #b92c28;
+}
+
 /* Index.html */
 
+#page1 header #title-container{
+  height: 100vh;
+  width: 70vw;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center; 
+  align-content: center;
+}
+/* Page Header */
+#page1 header .title{
+    font-size: 5em;
+    text-align: center;
+}
 
+/* Text Below Image */
+#page1 header p{
+  font-size: 2em;
+  text-align: center;
+}
 
-
+/* Start Button */
+#page1 #start-button {
+  border-radius: 5%;
+  background-color: red;
+  padding: 15px;
+  margin: 5px;
+  width: 7vw;
+ 
+}
 
 
 
@@ -24,7 +64,7 @@ body, html {
 
 /* Casino.html */
 
-button{
+#page2 button{
   background-color: red;
   padding: 15px;
   margin: 5px;
@@ -32,16 +72,7 @@ button{
   width: 100px;
   }
 
-  /* FA stylings for buttons */
-  .btn-circle{
-    border-radius: 50%
-  }
-
-  .btn-danger.btn-circle{
-    -webkit-box-shadow: 0px 0px 3px 1px #b92c28;
-    -moz-box-shadow:    0px 0px 3px 1px #b92c28;
-    box-shadow:         0px 0px 3px 1px #b92c28;
-  }
+ 
 
   /* Styling for Sums Fonts */
   #buttons #player-cards-score, #buttons #dealer-cards-score, #buttons #victory{
@@ -66,7 +97,7 @@ button{
   }
 
 /* Player Cards and Dealer Cards Div Resized to fit 30% of screen */
-.mh1 article{
+page2 mh1 article{
   height: 30vh;
 }
 
