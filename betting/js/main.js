@@ -1,8 +1,12 @@
 var blackjack = new BlackjackGame;
 
 //Activates Betting Buttons and Displays Current Bet and Total Values
-changeBet();
-displayBets();
+$(document).ready(function() {
+  $('#victory').text('Press Deal To Begin!');
+  changeBet();
+  displayBets();
+});
+
 
 //Run Deal Function, display values of cards, and hide right Dealer-Card when deal button pressed
 $('#deal-button').on("click", function(){
@@ -31,6 +35,8 @@ document.getElementById('player-cards-score').innerHTML = "Player: " + blackjack
 //Shows Sums of Player and Dealer Cards and Dealer's Hidden Card after Dealer Flips 
 function showHiddenDealerCard(){
   $('#dealer-card1').attr("style", 'background-image: url(\'images/' + blackjack.dealer.cards[1].img + '.png\')')
+  
+  //Displays Sums of Player and Dealer Cards 
   $('#dealer-cards-score').text("Dealer: " + blackjack.dealer.sum)
   $('#player-cards-score').text("Player: " + blackjack.player.sum)
   }
