@@ -170,6 +170,8 @@ BlackjackGame.prototype.checkForBust = function(person){
      this.checkBet(this.dealer)
   }
 
+  //if ace in hand and person.cards sum > 21
+  // {sum -10}
 }
 
 //Initiated by Stand Button
@@ -197,7 +199,6 @@ BlackjackGame.prototype.addBet = function(dollars){
 	if( this.player.currentBet + dollars <= this.player.total){
   this.player.currentBet += dollars;
 }
-
 else{
   return "You bet more than you have!"
 }
@@ -244,6 +245,18 @@ BlackjackGame.prototype.subtractBet = function(dollars){
         displayBets();
       }
   }
+
+// BlackjackGame.prototype.checkForAces = function(person){
+//       this.person.cards.forEach(function(card){
+//         var index = (card.img.length)-1;  
+//         if(card.img.charAt(index) === 'A'){
+//             return true
+//         }
+//         else{
+//           return false
+//         }
+//       })
+// }
 
 //Reset Sums and Cards for New Hand
 BlackjackGame.prototype.reset = function(){

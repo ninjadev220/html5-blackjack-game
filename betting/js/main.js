@@ -2,7 +2,7 @@ var blackjack = new BlackjackGame;
 
 //Activates Betting Buttons and Displays Current Bet and Total Values
 $(document).ready(function() {
-  $('#victory').text('Press Deal To Begin!');
+  $('#victory').text('Press Deal To Start');
   changeBet();
   displayBets();
 });
@@ -128,13 +128,6 @@ function buttonsAfterDeal(){
   $('#deal-button').addClass('blocked');
   $('#plus-five-button').addClass('blocked');
   $('#minus-five-button').addClass('blocked');
-}
-
-function flipCard(){
-  $('#card1').on('click', function() {
-    $('.dealer-card2').toggleClass('back');
-    $('.dealer-card2').toggleClass('front');
-  })
 }
 
 
