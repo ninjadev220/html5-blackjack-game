@@ -4,7 +4,7 @@ var blackjack = new BlackjackGame;
 $(document).ready(function() {
   $("#intro").addClass('intro-container')
   $('#victory').addClass('intro');
-  $('#victory').html('<h1>Press Deal To Start</h1>');
+  $('#victory').html('<h1>Place Your Bet and Press Deal To Start</h1>');
   
   //Initialize Bet Buttons to Adjust Current Bet Value
   changeBet();

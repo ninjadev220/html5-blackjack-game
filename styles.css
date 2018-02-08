@@ -1,6 +1,7 @@
 
 body, html {
   height: 100%;
+  
 }
 /* Page Background */
 .bg{
@@ -63,7 +64,7 @@ body, html {
 }
 
 /* Start Button */
-#page1 #start-button {
+#page1 #start-button, #page3 #start-button {
   border-radius: 5%;
   background-color: red;
   padding: 15px;
@@ -155,4 +156,30 @@ padding-top: 2vh;
 #page2 .bet-buttons{
   padding: 7px;
 }
+
+/* Rules Page */
+#page3 header #title-container{
+ 
+  width: 70vw;
+  margin: auto;
+  padding: 20px;
+}
+/* Page Header */
+#page3 header .title{
+    font-size: 5em;
+    text-align: center;
+}
+
+#page3 ol{
+  font-size: 1.3em;
+}
+
+#page3 li{
+  padding: 3px;
+}
+
+#page3 #terms h2{
+  font-size: 2em;
+}
+
 
