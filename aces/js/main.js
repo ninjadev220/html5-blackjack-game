@@ -13,6 +13,10 @@ $('#deal-button').on("click", function(){
     blackjack.deal();
     //Set buttons to Appropriate Position
     buttonsAfterDeal();
+
+    if(blackjack.checkForBlackjack(blackjack.dealer) === true || blackjack.checkForBlackjack(blackjack.dealer) === true){
+      buttonsStartDeal();
+    }
 })
 
 //Initiates Player Hit function when Hit Button Pressed. 

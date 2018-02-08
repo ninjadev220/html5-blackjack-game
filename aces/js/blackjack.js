@@ -92,9 +92,12 @@ BlackjackGame.prototype.dealACard= function(person){
   //Add value of Card to Sum
   person.sum += this.deck[index].value;
 
-  //Add Ace to Aces Array
-  this.addAce(person, index);
+  //Add Values to Aces Array to Calculature Sum With Ace
+  this.addValuesArray(person, index);
   
+  //Adjusts Sum For Aces
+  this.aceLogic(person);
+
   //Remove Card from the Deck
   this.deck.splice(index, 1);
   
@@ -112,6 +115,7 @@ BlackjackGame.prototype.checkForBlackjack = function(){
     //Add Bet and A Half to Player Total
     this.checkBet('blackjack');
     displayWinner(this.player, "blackjack");
+    return true
   }
     //If Dealer Has Blackjack, Display Dealer Wins
   else if(this.player.sum < 21 && this.dealer.sum === 21){
@@ -119,6 +123,8 @@ BlackjackGame.prototype.checkForBlackjack = function(){
     showHiddenDealerCard();
       
     displayWinner(this.dealer, "blackjack")
+
+    return true
   }
    //If Dealer and Player Has Blackjack, Display Push
   else if(this.player.sum ===21 && this.dealer.sum ===21){
@@ -126,6 +132,8 @@ BlackjackGame.prototype.checkForBlackjack = function(){
     showHiddenDealerCard();
     
     displayWinner('push')
+
+    return true
   }
   else{
     console.log("No Blackjack")
@@ -156,7 +164,6 @@ BlackjackGame.prototype.dealerHit= function(){
 
 BlackjackGame.prototype.checkForBust = function(person){
  //If Dealer Busts, Player Wins
-   this.aceLogic(person);
  
    if(person = this.dealer && this.dealer.sum > 21)
   {
@@ -258,22 +265,28 @@ BlackjackGame.prototype.initializeBet = function(){
   }
 
   
-BlackjackGame.prototype.addAce = function(who, number){
-  if(this.deck[number].value === 11){
-            who.aces.push(this.deck[number])
-      }
+BlackjackGame.prototype.addValuesArray = function(who, number){
+            who.aces.push(this.deck[number].value)
+     
 }
 
+//
 BlackjackGame.prototype.aceLogic = function(person){
-    if(person.aces.length > 0 && person.cards.sum > 21){
-          person.sum -= 10;
-          person.aces.pop();
-          this.checkForBust();
+      var total = person.aces.reduce(function(total, current){
+      return total + current;
+  })
+     if(person.aces.indexOf(11) !== -1){
+      console.log('A!');    
+      if(total > 21){
+            person.aces[person.aces.indexOf(11)] = 1;
+            var lowTotal =person.aces.reduce(function(total, current){
+              return total + current;
+          })
+            person.sum = lowTotal
+          }
+      }
     }
-    }
-// if ace in hand and person.cards sum > 21
-//   {card.value === 1} 
-// }
+
 
 //Reset Sums and Cards for New Hand
 BlackjackGame.prototype.reset = function(){
