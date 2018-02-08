@@ -74,6 +74,8 @@ body, html {
 
 
 /* Casino.html */
+
+
 #page2 button{
   background-color: red;
   padding: 15px;
@@ -87,14 +89,6 @@ body, html {
     font-size: 2em;
   }
 
-  .info-box{
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    font-size: 24px;
-    text-align: center;
-  }
-  
   /* Class for Card Styling */
  .card{
     width: 125px;
@@ -102,6 +96,22 @@ body, html {
     margin: 5px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+/* Stylings for Intro Header*/
+#page2 .intro{
+  padding-left: 10vw;
+  text-align: center;
+}
+
+/* Stylings for Intro Container */
+#page2 .intro-container{
+margin-top: 35vh;
+}
+
+/* Add Padding to Top Div */
+#page2 #dealer-cards{
+padding-top: 2vh;
 }
 
 /* Player Cards and Dealer Cards Div Resized to fit 30% of screen */
@@ -114,8 +124,16 @@ body, html {
   pointer-events: none;
 }
 
+
+
+
 /* Stylings for Current Bet and Player Total */
 #page2 .left-values{
   font-size: 2em;
-
 }
+
+/* Betting Buttons */
+#page2 .bet-buttons{
+  padding: 7px;
+}
+

@@ -2,21 +2,27 @@ var blackjack = new BlackjackGame;
 
 //Activates Betting Buttons and Displays Current Bet and Total Values
 $(document).ready(function() {
-  $('#victory').text('Press Deal To Start');
+  $("#intro").addClass('intro-container')
+  $('#victory').addClass('intro');
+  $('#victory').html('<h1>Press Deal To Start</h1>');
+  
+  //Initialize Bet Buttons to Adjust Current Bet Value
   changeBet();
+  //Display Bet Value and Total Value
   displayBets();
 });
 
 
 //Run Deal Function, display values of cards, and hide right Dealer-Card when deal button pressed
 $('#deal-button').on("click", function(){
-    blackjack.deal();
-    //Set buttons to Appropriate Position
-    buttonsAfterDeal();
-
-    if(blackjack.checkForBlackjack(blackjack.dealer) === true || blackjack.checkForBlackjack(blackjack.dealer) === true){
-      buttonsStartDeal();
-    }
+    //  Remove Intro Stylings
+     $('#victory').removeClass('intro');
+     $("#intro").removeClass('intro-container')
+     //Set buttons to Appropriate Positions
+     buttonsAfterDeal();
+    //Deal the Cards 
+     blackjack.deal();
+   
 })
 
 //Initiates Player Hit function when Hit Button Pressed. 
@@ -49,19 +55,24 @@ function showHiddenDealerCard(){
 function displayWinner(person, string){
   if(person === 'push'){
     $("#victory").text('Push!');
+    //Adds currentBet to Total
+    blackjack.checkBet(person, string)
   }
   else if(string === "blackjack"){
     $("#victory").text(person.name + " has Blackjack!")
+    //
+    blackjack.checkBet(person, string)
   }
   else if(string==="bust"){
     $("#victory").text(person.name + " busts!");
   }
   else{
   $("#victory").text(person.name + " wins!");
-  
-  //Adds or Subtracts Bet from Total According to Winner Except for Bust and Blackjack (See blackjack.checkForBust, blackjack.addBlackjack)
-  blackjack.checkBet(person)
+  //Adds current 
+  blackjack.checkBet(person, string)
 }
+
+ 
   //Block Hit and Stand Buttons, Unblock Deal Button
   buttonsStartDeal();
 }
