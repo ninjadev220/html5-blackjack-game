@@ -68,18 +68,22 @@ BlackjackGame.prototype.deal = function(){
   this.makeDeck();
   
   //Deal Two Cards One at a Time
+  var interval = 300;
   var that = this;
   this.dealACard(this.player);
-  this.dealACard(this.dealer);
-  this.dealACard(this.player);
-  this.dealACard(this.dealer);
-
+  window.setTimeout(function(){that.dealACard(that.dealer)}, interval)
+  window.setTimeout(function(){that.dealACard(that.player)}, interval * 2)
+  window.setTimeout(function(){that.dealACard(that.dealer)}, interval * 3)
+  // this.dealACard(this.dealer);
+  // this.dealACard(this.player);
+  // this.dealACard(this.dealer);
 
   //Display the Sums of the Player's Hand and the Dealer's Hand
-  displaySums();
+  window.setTimeout(function(){displaySums()}, interval * 4.5) 
 
   //Check Player and Dealer Hands for Blackjack. Respond Accordingly
-  this.checkForBlackjack();
+  window.setTimeout(function(){ that.checkForBlackjack();}, interval * 5)
+ 
   console.log(this.player.sum, this.dealer.sum)
 ;
 }
@@ -121,6 +125,7 @@ BlackjackGame.prototype.playerHit= function(){
 
 //Adds a card to Dealer's Hand. Check for Bust.
 BlackjackGame.prototype.dealerHit= function(){
+  
   this.dealACard(this.dealer);
   //Check for Bust
   this.checkForBust(this.dealer)
@@ -186,15 +191,16 @@ BlackjackGame.prototype.checkForBust = function(person){
      //Subtract Bet From Player
      this.checkBet(this.dealer)
   }
-
-  
 }
 
-//Initiated by Stand Button
+
 //Check sum of dealer cards against player cards. Initiate proper result.
 BlackjackGame.prototype.compareSums = function(){
   //If Dealer Hand is Less Than 17, Hit
     if (this.dealer.sum < 17){
+    //  var interval = 700
+    //   var that = this
+    //   window.setTimeout(function(){that.dealerHit()}, interval)
         this.dealerHit();
     }
     //If Dealer Hand is Lesser Than Player Hand and Greater than or equal to 17, Player Wins

@@ -125,6 +125,8 @@ function resetCards(){
   $('.container-dealer .row').html("");
   $('.container-player .row').html("")
   $('#victory').text("")
+  $('#dealer-cards-score').text("")
+  $('#player-cards-score').text("")
 }
 
 //Unblock Deal Button, Block Hit and Stand Buttons

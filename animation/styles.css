@@ -112,7 +112,7 @@ margin-top: 35vh;
 /* Add Padding to Top Div */
 #page2 #dealer-cards{
 padding-top: 2vh;
-/* overflow: hidden; */
+overflow: hidden;
 }
 
 /* Player Cards and Dealer Cards Div Resized to fit 30% of screen */
@@ -121,24 +121,46 @@ padding-top: 2vh;
 }
 
 /* Card Animation */
-/* #page2 article{
-  animation-duration: 2s;
+#page2 #dealer-cards article{
+  animation-duration: .5s;
   animation-name: slidein;
 }
 
 @keyframes slidein {
   from {
-    margin-left: 95%;
-    width: 300%; 
+    margin-left: 50%;
+    /* width: 125%;  */
     -webkit-transform: rotate(0deg);
   }
 
   to {
     margin-left: 0%;
-    width: 100%;
+    /* width: 100%; */
     -webkit-transform: rotate(360deg);
   }
-} */
+}
+
+#page2 #player-cards article{
+  animation-duration: .5s;
+  animation-name: slideinPlayer;
+}
+
+@keyframes slideinPlayer {
+  from {
+    margin-left: 50%;
+    position: relative;
+    bottom: 50vh;
+    /* width: 125%;  */
+    -webkit-transform: rotate(0deg);
+  }
+    to{
+    position: relative;
+    bottom: 0vh;
+    margin-left: 0%;
+    /* width: 100%; */
+    -webkit-transform: rotate(360deg);
+  }
+}
 
 
 /* Blocks buttons from triggering functions */
@@ -154,5 +176,6 @@ padding-top: 2vh;
 /* Betting Buttons */
 #page2 .bet-buttons{
   padding: 7px;
+ 
 }
 
