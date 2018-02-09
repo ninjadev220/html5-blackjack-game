@@ -1,15 +1,11 @@
 
 body, html {
   height: 100%;
-  
-}
-/* Page Background */
-.bg{
   background-image: url("images/casino-background.jpg");
-  height: 100%; 
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
+  
 }
 
  /* Stylings for buttons */
@@ -22,6 +18,16 @@ body, html {
   -moz-box-shadow:    0px 0px 3px 1px #b92c28;
   box-shadow:         0px 0px 3px 1px #b92c28;
 }
+
+  /* Class for Card Styling */
+  .card{
+    width: 125px;
+    height: 160px;
+    margin: 5px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 
 /* Index.html */
 
@@ -64,40 +70,18 @@ body, html {
 }
 
 /* Start Button */
-#page1 #start-button, #page3 #start-button {
+#page1 .start-button, #page3 .start-button {
   border-radius: 5%;
   background-color: red;
   padding: 15px;
   margin: 5px;
-  width: 7vw;
+  width: 100px;  
 }
 
 
 
 /* Casino.html */
 
-
-#page2 button{
-  background-color: red;
-  padding: 15px;
-  margin: 5px;
-  border-radius: 100%;
-  width: 100px;
-  }
-
-  /* Styling for Sums Fonts */
-  #buttons #player-cards-score, #buttons #dealer-cards-score, #buttons #victory{
-    font-size: 2em;
-  }
-
-  /* Class for Card Styling */
- .card{
-    width: 125px;
-    height: 160px;
-    margin: 5px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
 
 /* Stylings for Intro Header*/
 #page2 .intro{
@@ -108,6 +92,38 @@ body, html {
 /* Stylings for Intro Container */
 #page2 .intro-container{
 margin-top: 35vh;
+}
+
+#page2 button{
+  background-color: red;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 100%;
+  width: 100px;
+  }
+
+  /* Betting Buttons */
+#page2 .bet-buttons{
+  padding: 7px;
+}
+
+  /* Styling for Displaying Sums, Bet Value, and Total */
+  #page2 .sums, .left-values {
+    font-size: 2em;
+  }
+
+  /* Current Bet and Player Values Larger Font-Size for Medium Screens and Up */
+@media (min-width: 768px) 
+{#page2 .left-values{
+  font-size: 2.3em;
+}
+}
+
+/* Larger Font-Size for Medium Screens and Up */
+@media (min-width: 768px) 
+{#page2 .scores{
+  font-size: 1.3em;
+}
 }
 
 /* Add Padding to Top Div */
@@ -147,33 +163,12 @@ padding-top: 2vh;
   pointer-events: none;
 }
 
-/* Stylings for Current Bet and Player Total */
-#page2 .left-values{
-  font-size: 2em;
-}
 
-/* Current Bet and Player Values Larger Font-Size for Medium Screens and Up */
-@media (min-width: 768px) 
-{#page2 .left-values{
-  font-size: 2.3em;
-}
-}
 
-/* Betting Buttons */
-#page2 .bet-buttons{
-  padding: 7px;
-}
-
-/* Larger Font-Size for Medium Screens and Up */
-@media (min-width: 768px) 
-{#page2 .scores{
-  font-size: 1.3em;
-}
-}
 
 /* Rules Page */
-#page3 header #title-container{
-  width: 70vw;
+#page3 .container{
+  width: 80vw;
   margin: auto;
   padding: 20px;
 }
@@ -183,14 +178,17 @@ padding-top: 2vh;
     text-align: center;
 }
 
+/* Rules List Font-Size */
 #page3 ol{
   font-size: 1.3em;
 }
 
+/* Rules List-Item Padding */
 #page3 li{
   padding: 3px;
 }
 
+/* Header for Terms Section */
 #page3 #terms h2{
   font-size: 2em;
 }

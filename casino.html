@@ -15,7 +15,6 @@
   <title>Blackjack Casino</title>
 </head>
 <body id="page2">
-  <div class="bg">
   <!-- Dealer Cards -->
   <section id="dealer-cards">
     <div class="container container-dealer">
@@ -27,7 +26,9 @@
         </div>
     </div>
   </section>  
-<!-- Buttons and Winner Displays -->
+
+
+  <!-- Buttons and Winner Displays -->
   <section id="buttons">
       <div class="container" id="intro">
         <div class="row">
@@ -39,14 +40,16 @@
                <!-- Display Player's Total  -->
               <div id="player-total" align="left" class="left-values"></div>
           </div>
+          
           <div class="col-6 d-flex flex-column justify-content-between scores">
               <!-- Displays Dealer's Hand Value -->
-              <div id="dealer-cards-score" align="right"></div>
+              <div id="dealer-cards-score" class="sums" align="right"></div>
               <!-- Displays The Winner -->
-              <div id="victory"></div>
+              <div id="victory" class="sums"></div>
                <!-- Displays Player's Hand Value -->
-               <div id="player-cards-score" align="right"></div>
+               <div id="player-cards-score" class="sums" align="right"></div>
           </div>
+          
           <div class="col-3 d-flex flex-column">
               <!-- Displays Deal Button -->
               <div align="right"> <button class="btn btn-danger btn-circle btn-lg" id="deal-button">Deal</button></div>
@@ -58,6 +61,8 @@
         </div>
       </div>
   </section>
+  
+  
   <!-- Player Cards -->
         <section id="player-cards">
           <div class="container container-player">
@@ -66,8 +71,7 @@
             </div>
           </div>
         </section>
-<!-- Close Background Image div -->
-</div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
