@@ -101,7 +101,7 @@ body, html {
 
 /* Stylings for Intro Header*/
 #page2 .intro{
-  padding-left: 10vw;
+  /* padding-left: 10vw; */
   text-align: center;
 }
 
@@ -152,14 +152,27 @@ padding-top: 2vh;
   font-size: 2em;
 }
 
+/* Current Bet and Player Values Larger Font-Size for Medium Screens and Up */
+@media (min-width: 768px) 
+{#page2 .left-values{
+  font-size: 2.3em;
+}
+}
+
 /* Betting Buttons */
 #page2 .bet-buttons{
   padding: 7px;
 }
 
+/* Larger Font-Size for Medium Screens and Up */
+@media (min-width: 768px) 
+{#page2 .scores{
+  font-size: 1.3em;
+}
+}
+
 /* Rules Page */
 #page3 header #title-container{
- 
   width: 70vw;
   margin: auto;
   padding: 20px;

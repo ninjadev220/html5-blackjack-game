@@ -265,8 +265,7 @@ BlackjackGame.prototype.initializeBet = function(){
 
   
 BlackjackGame.prototype.addValuesArray = function(who, number){
-            who.aces.push(this.deck[number].value)
-     
+            who.aces.push(this.deck[number].value)   
 }
 
 //Determines What Value of an Ace Should Be and Adjusts Appropriately
@@ -285,7 +284,6 @@ BlackjackGame.prototype.aceLogic = function(person){
           }
       }
     }
-
 
 //Reset Sums and Cards for New Hand
 BlackjackGame.prototype.reset = function(){
