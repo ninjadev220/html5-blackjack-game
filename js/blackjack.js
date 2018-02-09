@@ -166,25 +166,31 @@ BlackjackGame.prototype.checkForBust = function(person){
  
    if(person = this.dealer && this.dealer.sum > 21)
   {
+     //Add Bet To Player
+    this.checkBet(this.player)
     // Display Dealer Busts
     displayWinner(this.dealer, "bust")
     
     //Show hidden Dealer Card
     showHiddenDealerCard();
+   
 
-    //Add Bet To Player
-    this.checkBet(this.player)
+   
   }
   //If Player Busts, Dealer Wins  - && this.player.sumLowAce > 21
   else if(person = this.player && this.player.sum > 21){
-     //Display Player Busts
+    
+     //Subtract Bet From Player
+     this.checkBet(this.dealer) 
+    
+    //Display Player Busts
     displayWinner(this.player, "bust")
     
     //Show hidden Dealer Card
      showHiddenDealerCard();
 
-     //Subtract Bet From Player
-     this.checkBet(this.dealer)
+     displaySums();
+
   }
 
   
@@ -210,7 +216,7 @@ BlackjackGame.prototype.compareSums = function(){
   console.log(this.dealer.sum)
 }
 
-//Add to Current Bet
+//Add to Current Bet If Player Has At Least $5
 BlackjackGame.prototype.addBet = function(dollars){
 	if( this.player.currentBet + dollars <= this.player.total){
   this.player.currentBet += dollars;
@@ -257,8 +263,14 @@ BlackjackGame.prototype.subtractBet = function(dollars){
     
  //Close Bets, Attached to Deal Button
 BlackjackGame.prototype.initializeBet = function(){
-      if(this.player.total > 0){
+      if(this.player.total > 0 && this.player.currentBet <= this.player.total){
       this.player.total -= this.player.currentBet;
+        displayBets();
+      }
+      // Adjusts Bet to Max if You Try and Bet Over
+      else{
+        this.player.currentBet = this.player.total 
+        this.player.total -= this.player.currentBet;
         displayBets();
       }
   }
@@ -298,6 +310,7 @@ BlackjackGame.prototype.reset = function(){
 
   //From main.js, Reset Cards on Display to Empty to Prepare For Next Deal
   resetCards();
+  
 }
 
 

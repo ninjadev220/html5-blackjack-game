@@ -10,6 +10,9 @@ $(document).ready(function() {
   changeBet();
   //Display Bet Value and Total Value
   displayBets();
+
+  //Blocks Hit and Stand Button At Beginning
+  buttonsStartDeal();
 });
 
 
@@ -72,9 +75,9 @@ function displayWinner(person, string){
   blackjack.checkBet(person, string)
 }
 
- 
-  //Block Hit and Stand Buttons, Unblock Deal Button
   buttonsStartDeal();
+  //Block Hit and Stand Buttons, Unblock Deal Button
+  endGame();
 }
 
 //Make html for each each to be displayed. Person = Dealer Or Player
@@ -145,5 +148,18 @@ function buttonsAfterDeal(){
   $('#minus-five-button').addClass('blocked');
 }
 
+function buttonsEnd(){
+  $('#deal-button').addClass('blocked');
+  $('#plus-five-button').addClass('blocked');
+  $('#minus-five-button').addClass('blocked')
+}
+//Ends Game if Player Has $0
+function endGame(){
+  if(blackjack.player.total < 5){
+    $('#victory').text('Oh No...You Lost All Your Money! Reload The Page')
+    buttonsEnd();
+    console.log('yes!')
+  }
 
+}
 
