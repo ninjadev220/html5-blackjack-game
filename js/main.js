@@ -57,20 +57,20 @@ function showHiddenDealerCard(){
 //Display Winner of Hand
 function displayWinner(person, string){
   if(person === 'push'){
-    $("#victory").text('Push!');
+    $("#victory").text('PUSH!');
     //Adds currentBet to Total
     blackjack.checkBet(person, string)
   }
   else if(string === "blackjack"){
-    $("#victory").text(person.name + " has Blackjack!")
+    $("#victory").text(person.name.toUpperCase() + " HAS BLACKJACK!")
     //
     blackjack.checkBet(person, string)
   }
   else if(string==="bust"){
-    $("#victory").text(person.name + " busts!");
+    $("#victory").text(person.name.toUpperCase() + " BUSTS!");
   }
   else{
-  $("#victory").text(person.name + " wins!");
+  $("#victory").text(person.name.toUpperCase() + " WINS!");
   //Adds current 
   blackjack.checkBet(person, string)
 }
@@ -130,7 +130,7 @@ function resetCards(){
   $('#victory').text("")
 }
 
-//Unblock Deal Button, Block Hit and Stand Buttons
+//Unblock Deal Button and Bet Buttons, Block Hit and Stand Buttons
 function buttonsStartDeal(){
   $('#hit-button').addClass('blocked');
   $('#stand-button').addClass('blocked');
@@ -139,7 +139,7 @@ function buttonsStartDeal(){
   $('#minus-five-button').removeClass('blocked');
 }
 
-//Block Deal Button, Unblock Hit and Stand buttons
+//Block Deal Button and Bet Buttons, Unblock Hit and Stand buttons
 function buttonsAfterDeal(){
   $('#hit-button').removeClass('blocked');
   $('#stand-button').removeClass('blocked');
@@ -156,9 +156,9 @@ function buttonsEnd(){
 //Ends Game if Player Has $0
 function endGame(){
   if(blackjack.player.total < 5){
-    $('#victory').text('Oh No...You Lost All Your Money! Reload The Page')
+    $('#victory').text('GAME OVER')
     buttonsEnd();
-    console.log('yes!')
+    // console.log('yes!')
   }
 
 }

@@ -29,6 +29,25 @@ body, html {
 }
 
 
+
+/* .blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  color:red;
+  text-shadow: 2px 2px black
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+} */
+
+
 /* Index.html */
 
 #page1 header #title-container{
@@ -46,6 +65,8 @@ body, html {
 #page1 header .title{
     font-size: 5em;
     text-align: center;
+    color: black;
+  text-shadow: 2px 2px white
 }
 
 /* Right Card Fan */
@@ -66,7 +87,9 @@ body, html {
 /* Text Below Image */
 #page1 header p{
   font-size: 2.5em;
-  text-align: center;  
+  text-align: center; 
+  color: white;
+  text-shadow: 4px 4px black 
 }
 
 /* Start Button */
@@ -82,11 +105,23 @@ body, html {
 
 /* Casino.html */
 
+#page2{
+  color: white;
+  text-shadow: 2px 2px black
+}
+
+/* Center Text */
+#page2 #victory{
+  color: red;
+  text-shadow: 2px 2px black;
+}
 
 /* Stylings for Intro Header*/
 #page2 .intro{
   /* padding-left: 10vw; */
   text-align: center;
+  color: white !important;
+
 }
 
 /* Stylings for Intro Container */
@@ -171,6 +206,8 @@ padding-top: 2vh;
   width: 80vw;
   margin: auto;
   padding: 20px;
+  color: white;
+  text-shadow: 2px 2px black
 }
 /* Page Header */
 #page3 header .title{

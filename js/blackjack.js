@@ -80,8 +80,7 @@ BlackjackGame.prototype.deal = function(){
 
   //Check Player and Dealer Hands for Blackjack. Respond Accordingly
   this.checkForBlackjack();
-  console.log(this.player.sum, this.dealer.sum)
-;
+  // console.log(this.player.sum, this.dealer.sum);
 }
 
 //Function for Dealing a Card. Who=Player or Dealer. Cards = # of Cards to deal
@@ -94,7 +93,7 @@ BlackjackGame.prototype.dealACard= function(person){
   //Add value of Card to Sum
   person.sum += this.deck[index].value;
 
-  //Add Values to Aces Array to Calculature Sum With Ace
+  //Add Values to Aces Array to Calculate Sum With Ace
   this.addValuesArray(person, index);
   
   //Adjusts Sum For Aces
@@ -173,9 +172,6 @@ BlackjackGame.prototype.checkForBust = function(person){
     
     //Show hidden Dealer Card
     showHiddenDealerCard();
-   
-
-   
   }
   //If Player Busts, Dealer Wins  - && this.player.sumLowAce > 21
   else if(person = this.player && this.player.sum > 21){
@@ -190,10 +186,7 @@ BlackjackGame.prototype.checkForBust = function(person){
      showHiddenDealerCard();
 
      displaySums();
-
   }
-
-  
 }
 
 //Initiated by Stand Button
@@ -291,7 +284,7 @@ BlackjackGame.prototype.aceLogic = function(person){
             person.aces[person.aces.indexOf(11)] = 1;
             var lowTotal =person.aces.reduce(function(total, current){
               return total + current;
-          })
+          });
             person.sum = lowTotal
           }
       }
